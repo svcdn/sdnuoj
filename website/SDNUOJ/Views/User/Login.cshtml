@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.__Title = "Sign in";
+    ViewBag.__Title = "登陆";
 }
 
 <div id="sigin-title" class="page-title row text-center">
@@ -9,10 +9,10 @@
 @using (Html.BeginForm("Login", "User", FormMethod.Post, new { @data_verify = "true" }))
 {
     <div class="sign-in">
-        <input name="username" type="text" class="form-control" placeholder="Username" required="required">
-        <input name="password" type="password" class="form-control" placeholder="Password" required="required">
+        <input name="username" type="text" class="form-control" placeholder="用户名" required="required">
+        <input name="password" type="password" class="form-control" placeholder="密码" required="required">
         <input name="referer" type="hidden" value="@ViewBag.ReturnUrl" /><br/>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
     </div>
     <script>document.getElementById("login-form").style.display = "none";</script>
 }

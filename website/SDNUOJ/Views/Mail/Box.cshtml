@@ -1,12 +1,12 @@
 ﻿@model SDNUOJ.Utilities.PagedList<SDNUOJ.Entity.UserMailEntity>
 
 @{
-    ViewBag.__Title = "Mail Box";
+    ViewBag.__Title = "消息盒";
     ViewBag.__Type = "mailbox";
 }
 
 <div class="page-title row text-center">
-    <h2>Mail Box</h2>
+    <h2>消息盒</h2>
 </div>
 
 @using (Html.BeginForm("Delete", "Mail", FormMethod.Post, new { @id = "form-mailbox-delete" }))
@@ -57,7 +57,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="label-newmail">New Mail</h4>
+                <h4 class="modal-title" id="label-newmail">发送新消息</h4>
             </div>
             <div class="modal-body">
                 <div class="dtable dtable-striped dtable-nofoot">
@@ -65,13 +65,13 @@
                         <div class="row">
                             <label for="title" class="col-sm-2 control-label"><span class="star">*</span> Title</label>
                             <div class="col-sm-9">
-                                <input id="title" name="title" type="text" maxlength="100" class="form-control" value="@(String.IsNullOrEmpty(ViewBag.Title) ? "" : "Re: " + ViewBag.Title)" required="required" placeholder="Mail title" data-emptyinfo="Mail title can not be NULL!" />
+                                <input id="title" name="title" type="text" maxlength="100" class="form-control" value="@(String.IsNullOrEmpty(ViewBag.Title) ? "" : "回复: " + ViewBag.Title)" required="required" placeholder="Mail title" data-emptyinfo="Mail title can not be NULL!" />
                             </div>
                         </div>
                         <div class="row">
                             <label for="title" class="col-sm-2 control-label"><span class="star">*</span> To</label>
                             <div class="col-sm-9">
-                                <input id="tousername" name="tousername" type="text" maxlength="20" class="form-control" value="@ViewBag.ToName" required="required" placeholder="Username" data-emptyinfo="To User name can not be NULL!" data-regex="^\w+$" data-invalidinfo="To User name is INVALID!" />
+                                <input id="tousername" name="tousername" type="text" maxlength="20" class="form-control" value="@ViewBag.ToName" required="required" placeholder="用户名" data-emptyinfo="To User name can not be NULL!" data-regex="^\w+$" data-invalidinfo="To User name is INVALID!" />
                             </div>
                         </div>
                         <div class="row">

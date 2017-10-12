@@ -1,31 +1,31 @@
 ﻿@model SDNUOJ.Entity.SolutionEntity
 
 @{
-    ViewBag.__Title = "Source Code View";
+    ViewBag.__Title = "浏览源码";
 }
 
 <div class="dtable dtable-striped">
     <div class="dhead">
         <div class="row text-center">
-            <h2>Source Code View</h2>
+            <h2>浏览源码</h2>
         </div>
     </div>
     <div class="dbody">
         <div class="row text-center">
             <span class="text-info">
-                Run ID: @Model.SolutionID
+                运行ID: @Model.SolutionID
                 @if (Model.ContestID > 0 && Model.ContestProblemID > 0) { @Html.Raw("&nbsp;/&nbsp; Contest ID: "); @Html.ActionLink(Model.ContestID.ToString(), "Index", "Home", new { area = "Contest", cid = Model.ContestID }, null); }
                 &nbsp;/&nbsp;
-                Problem ID: @(Model.ContestID > 0 && Model.ContestProblemID > 0 ? Html.ActionLink(Model.ContestProblemID.ToString(), "Show", "Problem", new { area = "Contest", cid = Model.ContestID, id = Model.ContestProblemID }, null) : Html.ActionLink(Model.ProblemID.ToString(), "Show", "Problem", new { id = Model.ProblemID }, null))
+                题目ID: @(Model.ContestID > 0 && Model.ContestProblemID > 0 ? Html.ActionLink(Model.ContestProblemID.ToString(), "Show", "Problem", new { area = "Contest", cid = Model.ContestID, id = Model.ContestProblemID }, null) : Html.ActionLink(Model.ProblemID.ToString(), "Show", "Problem", new { id = Model.ProblemID }, null))
                 &nbsp;/&nbsp;
-                Author: @Html.ActionLink(Model.UserName, "Info", "User", new { id = Model.UserName }, null)
+                作者: @Html.ActionLink(Model.UserName, "Info", "User", new { id = Model.UserName }, null)
                 &nbsp;/&nbsp;
-                Language: @Model.LanguageType<br />
-                Submit Time: @Model.SubmitTime.ToString("yyyy-MM-dd HH:mm:ss")
+                程序语言: @Model.LanguageType<br />
+                提交时间: @Model.SubmitTime.ToString("yyyy-MM-dd HH:mm:ss")
                 &nbsp;/&nbsp;
-                Judge Status: <span class="label status_@Model.Result">@((Model.Result == SDNUOJ.Entity.ResultType.CompileError || Model.Result == SDNUOJ.Entity.ResultType.RuntimeError) ? Html.ActionLink(Model.ResultString, "Info", "Solution", new { id = Model.SolutionID }, null) : Html.Raw(Model.ResultString))</span>
+                运行结果: <span class="label status_@Model.Result">@((Model.Result == SDNUOJ.Entity.ResultType.CompileError || Model.Result == SDNUOJ.Entity.ResultType.RuntimeError) ? Html.ActionLink(Model.ResultString, "Info", "Solution", new { id = Model.SolutionID }, null) : Html.Raw(Model.ResultString))</span>
                 &nbsp;/&nbsp;
-                Judge Time: @(Model.JudgeTime == DateTime.MinValue ? "-" : Model.JudgeTime.ToString("yyyy-MM-dd HH:mm:ss"))
+                运行时间: @(Model.JudgeTime == DateTime.MinValue ? "-" : Model.JudgeTime.ToString("yyyy-MM-dd HH:mm:ss"))
             </span>
         </div>
         <div class="row code-container">

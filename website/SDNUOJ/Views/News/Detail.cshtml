@@ -1,7 +1,7 @@
 ﻿@model SDNUOJ.Entity.NewsEntity
 
 @{
-    ViewBag.__Title = "News" + ((Model != null && !String.IsNullOrEmpty(Model.Title)) ? " - " + Model.Title : "");
+    ViewBag.__Title = "公告" + ((Model != null && !String.IsNullOrEmpty(Model.Title)) ? " - " + Model.Title : "");
 }
 
 <div class="dtable dtable-striped">
@@ -17,7 +17,7 @@
     </div>
     <div class="dfoot">
         <div class="row">
-            <div class="callout-right text-right">Publish Date: @Model.PublishDate.ToString("yyyy-MM-dd HH:mm:ss")</div>
+            <div class="callout-right text-right">发布于: @Model.PublishDate.ToString("yyyy-MM-dd HH:mm:ss")</div>
         </div>
     </div>
 </div>

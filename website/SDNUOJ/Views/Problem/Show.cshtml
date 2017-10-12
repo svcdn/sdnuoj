@@ -1,7 +1,7 @@
 ﻿@model SDNUOJ.Entity.ProblemEntity
 
 @{
-    ViewBag.__Title = "Problem - " + Model.ProblemID;
+    ViewBag.__Title = "题目 - " + Model.ProblemID;
 }
 
 <div class="dtable dtable-noborder problem-info">
@@ -14,39 +14,39 @@
         <div class="row text-center">
             <div class="well" style="margin-top:10px">
                 <span class="text-info">
-                    Time Limit: @Model.TimeLimit MS &nbsp;&nbsp;
-                    Memory Limit: @Model.MemoryLimit KB<br />
-                    Total Submission(s): @Html.ActionLink(Model.SubmitCount.ToString(), "List", "Status", new { pid = Model.ProblemID }, null) &nbsp;&nbsp;
-                    Accepted Submission(s): @Html.ActionLink(Model.SolvedCount.ToString(), "List", "Status", new { pid = Model.ProblemID, type = (Byte)SDNUOJ.Entity.ResultType.Accepted }, null)
+                    时长限制: @Model.TimeLimit MS &nbsp;&nbsp;
+                    内存限制: @Model.MemoryLimit KB<br />
+                    累计提交 (次): @Html.ActionLink(Model.SubmitCount.ToString(), "List", "Status", new { pid = Model.ProblemID }, null) &nbsp;&nbsp;
+                    通过的提交 (次): @Html.ActionLink(Model.SolvedCount.ToString(), "List", "Status", new { pid = Model.ProblemID, type = (Byte)SDNUOJ.Entity.ResultType.Accepted }, null)
                 </span>
             </div>
         </div>
         <div class="row">
-            <h3>Description</h3>
+            <h3>描述</h3>
         </div>
         <div class="row">
             <div class="well">@Html.Raw(Model.Description)</div>
         </div>
         <div class="row">
-            <h3>Input</h3>
+            <h3>输入</h3>
         </div>
         <div class="row">
             <div class="well">@Html.Raw(Model.Input)</div>
         </div>
         <div class="row">
-            <h3>Output</h3>
+            <h3>输出</h3>
         </div>
         <div class="row">
             <div class="well">@Html.Raw(Model.Output)</div>
         </div>
         <div class="row">
-            <h3>Sample Input</h3>
+            <h3>示例输入</h3>
         </div>
         <div class="row">
             <div class="well"><pre class="code">@Html.Raw(Model.SampleInput)@*!TIP:Problem.SampleInput获取时已Encode*@</pre></div>
         </div>
         <div class="row">
-            <h3>Sample Output</h3>
+            <h3>示例输出</h3>
         </div>
         <div class="row">
             <div class="well"><pre class="code">@Html.Raw(Model.SampleOutput)@*!TIP:Problem.SampleOutput获取时已Encode*@</pre></div>
@@ -61,7 +61,7 @@
             </div>
         }
         <div class="row">
-            <h3>Source</h3>
+            <h3>源码</h3>
         </div>
         <div class="row">
             <div class="well">@(String.IsNullOrEmpty(Model.Source) ? Html.Raw("Unknown") : Html.ActionLink(Model.Source, "Search", "Problem", new { type = "source", content = Model.Source }, null))</div>
@@ -70,9 +70,9 @@
     <div class="dfoot">
         <div class="row text-center">
             <div class="btn-group">
-                @Html.ActionLink("Submit", "Submit", "Problem", new { id = Model.ProblemID }, new { @class = "btn btn-primary" })
-                @Html.ActionLink("Statistic", "Statistic", "Problem", new { id = Model.ProblemID }, new { @class = "btn btn-default" })
-                @if (SDNUOJ.Configuration.ConfigurationManager.AllowMainForum) { @Html.ActionLink("Discuss", "Forum", "Problem", new { id = Model.ProblemID }, new { @class = "btn btn-default" }) }
+                @Html.ActionLink("提交代码", "Submit", "Problem", new { id = Model.ProblemID }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("查看统计", "Statistic", "Problem", new { id = Model.ProblemID }, new { @class = "btn btn-default" })
+                @if (SDNUOJ.Configuration.ConfigurationManager.AllowMainForum) { @Html.ActionLink("本题讨论", "Forum", "Problem", new { id = Model.ProblemID }, new { @class = "btn btn-default" }) }
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.__Title = "Register";
+    ViewBag.__Title = "注册";
 }
 
 <div class="page-title row text-center">
@@ -13,39 +13,39 @@
         <thead>
             <tr>
                 <td colspan="2" class="text-center">
-                    <span class="label label-primary">Note</span>
-                    <span>Please fill in the blank below, "<span class="star">*</span>" is necessary.</span>
+                    <span class="label label-primary">提示</span>
+                    <span>请填写下方空白，请注意，带有 "<span class="star">*</span>" 的是必填项。</span>
                 </td>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="td-firstcol"><span class="star">*</span> Username</td>
-                <td><input name="username" type="text" maxlength="20" class="form-control input-middle" required="required" data-emptyinfo="Username can not be NULL!" data-regex="^\w+$" data-invalidinfo="Username is INVALID!" /></td>
+                <td class="td-firstcol"><span class="star">*</span> 用户名</td>
+                <td><input name="username" type="text" maxlength="20" class="form-control input-middle" required="required" data-emptyinfo="用户名不能为空！" data-regex="^\w+$" data-invalidinfo="用户名无效！" /></td>
             </tr>
             <tr>
-                <td class="td-firstcol"><span class="star">*</span> Password</td>
-                <td><input id="txt-password" name="password" type="password" maxlength="20" class="form-control input-middle" required="required" data-emptyinfo="Password can not be NULL!" /></td>
+                <td class="td-firstcol"><span class="star">*</span> 密码</td>
+                <td><input id="txt-password" name="password" type="password" maxlength="20" class="form-control input-middle" required="required" data-emptyinfo="密码不能为空！" /></td>
             </tr>
             <tr>
-                <td class="td-firstcol"><span class="star">*</span> Confirm Password</td>
-                <td><input name="password2" type="password" maxlength="20" class="form-control input-middle" required="required" data-emptyinfo="Confirm password can not be NULL!" data-comparedto="txt-password" data-notequalinfo="Two passwords are not match!" /></td>
+                <td class="td-firstcol"><span class="star">*</span> 确认密码</td>
+                <td><input name="password2" type="password" maxlength="20" class="form-control input-middle" required="required" data-emptyinfo="确认密码不能为空！" data-comparedto="txt-password" data-notequalinfo="两次输入的密码不匹配！" /></td>
             </tr>
             <tr>
-                <td class="td-firstcol">Nick Name</td>
+                <td class="td-firstcol">昵称</td>
                 <td><input name="nickname" type="text" maxlength="40" class="form-control input-middle" /></td>
             </tr>
             <tr>
-                <td class="td-firstcol">School</td>
+                <td class="td-firstcol">学校</td>
                 <td><input name="school" type="text" maxlength="40" class="form-control input-middle" /></td>
             </tr>
             <tr>
-                <td class="td-firstcol"><span class="star">*</span> Email</td>
-                <td><input name="email" type="email" maxlength="40" class="form-control input-middle" required="required" data-emptyinfo="Email can not be NULL!" data-regex="^[\w-]+(\.[\w-]+)*@@[\w-]+(\.[\w-]+)+$" data-invalidinfo="Email is INVALID!" /></td>
+                <td class="td-firstcol"><span class="star">*</span> 电子邮箱</td>
+                <td><input name="email" type="email" maxlength="40" class="form-control input-middle" required="required" data-emptyinfo="电子邮箱不能为空！" data-regex="^[\w-]+(\.[\w-]+)*@@[\w-]+(\.[\w-]+)+$" data-invalidinfo="邮箱无效！" /></td>
             </tr>
             <tr>
-                <td class="td-firstcol"><span class="star">*</span> Verification Code</td>
-                <td><input name="checkcode" type="text" maxlength="40" class="form-control input-middle" required="required" data-emptyinfo="Verification Code can not be NULL!" /></td>
+                <td class="td-firstcol"><span class="star">*</span> 验证码</td>
+                <td><input name="checkcode" type="text" maxlength="40" class="form-control input-middle" required="required" data-emptyinfo="验证码不能为空！" /></td>
             </tr>
             <tr>
                 <td class="td-firstcol">&nbsp;</td>
@@ -57,8 +57,8 @@
         <tfoot>
             <tr>
                 <td colspan="2" class="text-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="reset" class="btn btn-default">Reset</button>
+                    <button type="submit" class="btn btn-primary">提交</button>
+                    <button type="reset" class="btn btn-default">重填</button>
                 </td>
             </tr>
         </tfoot>

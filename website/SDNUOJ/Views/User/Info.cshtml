@@ -1,7 +1,7 @@
 ﻿@model Tuple<SDNUOJ.Entity.UserEntity, List<Int32>, List<Int32>>
 
 @{
-    ViewBag.__Title = "User Information";
+    ViewBag.__Title = "用户信息";
     ViewBag.__Type = "userinfo";
 }
 
@@ -13,29 +13,29 @@
     </div>
     <div class="dbody">
         <div class="row">
-            <h3>Information</h3>
+            <h3>信息</h3>
         </div>
         <div class="row">
             <div class="well">
             <span>
                 @Html.Raw(Model.Item1.NickName)@*!TIP:User.NickName添加时已Encode*@
-                @Html.Raw(SDNUOJ.Configuration.ConfigurationManager.AllowUserMail ? "(<a href=\"" + Url.Action("Send", "Mail", new { name = Model.Item1.UserName }) + "\">@" + Model.Item1.UserName + "</a>)" : "")
+                @Html.Raw(SDNUOJ.Configuration.ConfigurationManager.AllowUserMail ? "(<a href=\"" + Url.Action("Send", "Mail", new { name = Model.Item1.UserName }) + "\">发送私信@" + Model.Item1.UserName + "</a>)" : "")
             </span><br />
             @if (Model.Item1.Permission > SDNUOJ.Entity.PermissionType.None) { <span>Group: @Model.Item1.Permission.ToString()</span><br /> }
-            <span>Rank: @Model.Item1.Rank,</span>
-            <span>Solved: @Html.ActionLink(Model.Item1.SolvedCount.ToString(), "List", "Status", new { name = Model.Item1.UserName, type = (Byte)SDNUOJ.Entity.ResultType.Accepted }, null),</span>
-            <span>Submissions: @Html.ActionLink(Model.Item1.SubmitCount.ToString(), "List", "Status", new { name = Model.Item1.UserName }, null),</span>
-            <span>Ratio: @Model.Item1.Ratio.ToString("F2")%</span><br /><br />
+            <span>排名: @Model.Item1.Rank,</span>
+            <span>已解决: @Html.ActionLink(Model.Item1.SolvedCount.ToString(), "List", "Status", new { name = Model.Item1.UserName, type = (Byte)SDNUOJ.Entity.ResultType.Accepted }, null),</span>
+            <span>提交数: @Html.ActionLink(Model.Item1.SubmitCount.ToString(), "List", "Status", new { name = Model.Item1.UserName }, null),</span>
+            <span>通过率: @Model.Item1.Ratio.ToString("F2")%</span><br /><br />
             <span>
                 <em>
-                    from:@(!String.IsNullOrEmpty(Model.Item1.School) ? Model.Item1.School : "Unknown") ,
-                    registered on @Model.Item1.CreateDate.ToString("yyyy-MM-dd")
+                    来自:@(!String.IsNullOrEmpty(Model.Item1.School) ? Model.Item1.School : "未知") ,
+                    注册于 @Model.Item1.CreateDate.ToString("yyyy-MM-dd")
                 </em>
             </span>
         </div>
     </div>
     <div class="row">
-        <h3>Solved problems <span id="downloadcode_@(Model.Item1.UserName.ToLower() + (SDNUOJ.Configuration.ConfigurationManager.AllowDownloadSource ? "" : "_disabled"))"></span></h3>
+        <h3>已通过题目 <span id="downloadcode_@(Model.Item1.UserName.ToLower() + (SDNUOJ.Configuration.ConfigurationManager.AllowDownloadSource ? "" : "_disabled"))"></span></h3>
     </div>
     <div class="row">
         <div class="well">
@@ -46,12 +46,12 @@
             }
             @if (Model.Item2.Count == 0)
             {
-                @: No solved problems
+                @: 暂无已通过题目
             }
         </div>
     </div>
     <div class="row">
-        <h3>Unsolved problems</h3>
+        <h3>正在攻克中的题目</h3>
     </div>
     <div class="row">
         <div class="well">
@@ -62,7 +62,7 @@
             }
             @if (Model.Item3.Count == 0)
             {
-                @: No unsolved problems
+                @: 暂无正在攻克中的题目
             }
         </div>
     </div>

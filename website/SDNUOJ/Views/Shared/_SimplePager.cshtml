@@ -21,9 +21,9 @@
 
 <nav>
     <ul class="pagination">
-        <li><a href="@Url.Action(action, controller, GetRouteValues(routeData, 1))@Request.Url.Query">&laquo;&nbsp;First</a></li>
-        <li><a href="@Url.Action(action, controller, GetRouteValues(routeData, lastPageIndex))@Request.Url.Query" rel="prev">&lsaquo;&nbsp;Prev</a></li>
-        <li><a href="@Url.Action(action, controller, GetRouteValues(routeData, nextPageIndex))@Request.Url.Query" rel="next">Next&nbsp;&rsaquo;</a></li>
-        <li><a href="@Url.Action(action, controller, GetRouteValues(routeData, pageCount))@Request.Url.Query">Last&nbsp;&raquo;</a></li>
+        <li><a href="@Url.Action(action, controller, GetRouteValues(routeData, 1))@Request.Url.Query">&laquo;&nbsp;首页</a></li>
+        <li><a href="@Url.Action(action, controller, GetRouteValues(routeData, lastPageIndex))@Request.Url.Query" rel="prev">&lsaquo;&nbsp;上一页</a></li>
+        <li><a href="@Url.Action(action, controller, GetRouteValues(routeData, nextPageIndex))@Request.Url.Query" rel="next">下一页&nbsp;&rsaquo;</a></li>
+        <li><a href="@Url.Action(action, controller, GetRouteValues(routeData, pageCount))@Request.Url.Query">末页&nbsp;&raquo;</a></li>
     </ul>
 </nav>

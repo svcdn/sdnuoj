@@ -1,19 +1,19 @@
 ﻿@model List<SDNUOJ.Entity.ProblemCategoryEntity>
 
 @{
-    ViewBag.__Title = "Problem Category";
+    ViewBag.__Title = "题目分类";
 }
 
 <div class="dtable dtable-striped dtable-hover dtable-nofoot" style="margin-bottom:28px;">
     <div class="dhead">
         <div class="row text-center">
-            <h2>Problem Category</h2>
+            <h2>题目分类</h2>
         </div>
         <div class="row">
             <div class="col-sm-1 col-xs-2 text-center">ID</div>
-            <div class="col-sm-5 col-xs-10">Category Name</div>
+            <div class="col-sm-5 col-xs-10">分类名</div>
             <div class="col-sm-1 col-xs-2 hidden-xs text-center">ID</div>
-            <div class="col-sm-5 col-xs-10 hidden-xs">Category Name</div>
+            <div class="col-sm-5 col-xs-10 hidden-xs">分类名</div>
         </div>
     </div>
     <div class="dbody">
@@ -37,7 +37,7 @@
     @if (Model.Count == 0)
     {
         <div class="row text-center">
-            No problem category
+            暂无题目分类
         </div>
     }
     </div>

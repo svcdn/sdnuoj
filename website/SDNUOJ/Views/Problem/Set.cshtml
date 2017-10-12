@@ -1,7 +1,7 @@
 ﻿@model SDNUOJ.Utilities.PagedList<SDNUOJ.Entity.ProblemEntity>
 
 @{
-    ViewBag.__Title = "Problem Set";
+    ViewBag.__Title = "题目列表";
     ViewBag.__Type = "problems";
 }
 
@@ -13,19 +13,19 @@
 @using (Html.BeginForm("Search", "Problem", FormMethod.Get))
 {
     <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
-        <span>Search:</span>
+        <span>查找:</span>
         <input name="content" type="text" class="form-control input-middle" />
     </div>
     <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
-        <span>In</span>
+        <span>以</span>
         <select name="type" class="form-control input-short">
-            <option value="pid">PIDs</option>
-            <option value="title">Title</option>
-            <option value="source">Source</option>
+            <option value="pid">题目ID</option>
+            <option value="title">标题</option>
+            <option value="source">源码</option>
         </select>
     </div>
     <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
-        <button type="submit" class="btn btn-default">Search</button>
+        <button type="submit" class="btn btn-default">查找</button>
     </div>
 }
 </div>
@@ -34,9 +34,9 @@
     <thead>
         <tr>
             <th id="@(SDNUOJ.Configuration.ConfigurationManager.AllowMainSubmitStatus ? "SOpen" : "SClose")"></th>
-            <th class="td-problemid text-center">PID</th>
-            <th>Problem Title</th>
-            <th class="td-problemratio text-center">Ratio(AC/Submit)</th>
+            <th class="td-problemid text-center">题目ID</th>
+            <th>题目标题</th>
+            <th class="td-problemratio text-center">通过率(通过提交/总提交数)</th>
         </tr>
     </thead>
     <tbody>
@@ -57,7 +57,7 @@
     @if (Model.Count == 0)
     {
         <tr>
-            <td colspan="4" class="text-center">No problem</td>
+            <td colspan="4" class="text-center">暂无题目</td>
         </tr>
     }
     </tbody>
