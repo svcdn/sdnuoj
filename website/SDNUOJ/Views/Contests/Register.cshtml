@@ -1,11 +1,11 @@
 ﻿@model SDNUOJ.Entity.ContestEntity
 
 @{
-    ViewBag.__Title = "Contest Register";
+    ViewBag.__Title = "竞赛注册";
 }
 
 <div class="page-title row text-center">
-    <h2>@Model.Title Register</h2>
+    <h2>@Model.Title 注册</h2>
 </div>
 
 @using (Html.BeginForm("Register", "Contests", new { id = Model.ContestID }, FormMethod.Post, new { @data_verify = "true" }))
@@ -16,22 +16,22 @@
             <tr>
                 <td colspan="2" class="text-center">
                     <span class="label label-primary">提示</span>
-                    <span>Please fill in the blank below, "<span class="star">*</span>" is necessary.</span>
+                    <span>请填写下方空白，请注意，带有 "<span class="star">*</span>" 的是必填项。</span>
                 </td>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="td-firstcol">Contest Type</td>
+                <td class="td-firstcol">竞赛类型</td>
                 <td><span class="label contest_@Model.ContestType">@Model.ContestTypeString</span></td>
             </tr>
             <tr>
-                <td class="td-firstcol"><span class="star">*</span> Username</td>
+                <td class="td-firstcol"><span class="star">*</span> 用户名</td>
                 <td><input type="text" class="form-control input-middle" readonly="readonly" value="@ViewBag.UserName" /></td>
             </tr>
             <tr>
-                <td class="td-firstcol"><span class="star">*</span> Real Name</td>
-                <td><input name="realname" type="text" maxlength="20" class="form-control input-middle" required="required" data-emptyinfo="Real name can not be NULL!" /></td>
+                <td class="td-firstcol"><span class="star">*</span> 真实姓名</td>
+                <td><input name="realname" type="text" maxlength="20" class="form-control input-middle" required="required" data-emptyinfo="真实姓名不能为空！" /></td>
             </tr>
         </tbody>
         <tfoot>

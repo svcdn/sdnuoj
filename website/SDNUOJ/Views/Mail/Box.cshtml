@@ -20,8 +20,8 @@
                     <input type="checkbox" data-selectall-name="mailid" />No.
                 </th>
                 <th colspan="2">
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-newmail">New</button>
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-newmail">新消息</button>
+                    <button type="submit" class="btn btn-danger">删除</button>
                 </th>
             </tr>
         </thead>
@@ -38,7 +38,7 @@
         @if (Model.Count == 0)
         {
             <tr>
-                <td colspan="3" class="text-center">No Mail</td>
+                <td colspan="3" class="text-center">无消息</td>
             </tr>
         }
         </tbody>
@@ -63,29 +63,29 @@
                 <div class="dtable dtable-striped dtable-nofoot">
                     <div class="dbody">
                         <div class="row">
-                            <label for="title" class="col-sm-2 control-label"><span class="star">*</span> Title</label>
+                            <label for="title" class="col-sm-2 control-label"><span class="star">*</span> 标题</label>
                             <div class="col-sm-9">
-                                <input id="title" name="title" type="text" maxlength="100" class="form-control" value="@(String.IsNullOrEmpty(ViewBag.Title) ? "" : "回复: " + ViewBag.Title)" required="required" placeholder="Mail title" data-emptyinfo="Mail title can not be NULL!" />
+                                <input id="title" name="title" type="text" maxlength="100" class="form-control" value="@(String.IsNullOrEmpty(ViewBag.Title) ? "" : "回复: " + ViewBag.Title)" required="required" placeholder="消息标题" data-emptyinfo="消息标题不能为空！" />
                             </div>
                         </div>
                         <div class="row">
-                            <label for="title" class="col-sm-2 control-label"><span class="star">*</span> To</label>
+                            <label for="title" class="col-sm-2 control-label"><span class="star">*</span> 发送到</label>
                             <div class="col-sm-9">
-                                <input id="tousername" name="tousername" type="text" maxlength="20" class="form-control" value="@ViewBag.ToName" required="required" placeholder="用户名" data-emptyinfo="To User name can not be NULL!" data-regex="^\w+$" data-invalidinfo="To User name is INVALID!" />
+                                <input id="tousername" name="tousername" type="text" maxlength="20" class="form-control" value="@ViewBag.ToName" required="required" placeholder="用户名" data-emptyinfo="要发送到的用户名不能为空！" data-regex="^\w+$" data-invalidinfo="用户名无效！" />
                             </div>
                         </div>
                         <div class="row">
-                            <label for="content" class="col-sm-2 control-label"><span class="star">*</span> Content</label>
+                            <label for="content" class="col-sm-2 control-label"><span class="star">*</span> 正文</label>
                             <div class="col-sm-9">
-                                <textarea id="content" name="content" class="form-control" rows="6" required="required" placeholder="Your content" data-emptyinfo="Mail content can not be NULL!"></textarea>
+                                <textarea id="content" name="content" class="form-control" rows="6" required="required" placeholder="您的正文" data-emptyinfo="消息正文不能为空！"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" data-loading-text="Sending...">Send</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="submit" class="btn btn-primary" data-loading-text="正在发送...">发送</button>
             </div>
         </div>
     </div>

@@ -64,7 +64,7 @@
             <h3>源码</h3>
         </div>
         <div class="row">
-            <div class="well">@(String.IsNullOrEmpty(Model.Source) ? Html.Raw("Unknown") : Html.ActionLink(Model.Source, "Search", "Problem", new { type = "source", content = Model.Source }, null))</div>
+            <div class="well">@(String.IsNullOrEmpty(Model.Source) ? Html.Raw("未知") : Html.ActionLink(Model.Source, "Search", "Problem", new { type = "source", content = Model.Source }, null))</div>
         </div>
     </div>
     <div class="dfoot">

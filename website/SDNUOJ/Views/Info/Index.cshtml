@@ -1,11 +1,11 @@
 ﻿@{
-    ViewBag.__Title = "System Message";
+    ViewBag.__Title = "系统消息";
 }
 
 <div class="dtable">
     <div class="dhead">
         <div class="row text-center">
-            <h2>System Message</h2>
+            <h2>系统消息</h2>
         </div>
     </div>
     <div class="dbody">
@@ -17,7 +17,7 @@
     </div>
     <div class="dfoot">
         <div class="row text-center">
-            <a class="btn btn-default" href="@Html.Raw(String.IsNullOrEmpty(ViewBag.BackUrl) ? "javascript:void(0);" : ViewBag.BackUrl)" @Html.Raw(String.IsNullOrEmpty(ViewBag.BackUrl) ? "onclick=\"history.go(-1);\"" : "")>Back</a>
+            <a class="btn btn-default" href="@Html.Raw(String.IsNullOrEmpty(ViewBag.BackUrl) ? "javascript:void(0);" : ViewBag.BackUrl)" @Html.Raw(String.IsNullOrEmpty(ViewBag.BackUrl) ? "onclick=\"history.go(-1);\"" : "")>返回</a>
         </div>
     </div>
 </div>

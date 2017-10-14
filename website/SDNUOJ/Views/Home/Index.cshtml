@@ -17,7 +17,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="news-heading">
                     <h4 class="panel-title">
-                        <strong>Latest News</strong>
+                        <strong>最新公告</strong>
                         <a href="@Url.Action("List", "News")"><span class="small">[more...]</span></a>
                     </h4>
                 </div>
@@ -42,12 +42,12 @@
     </div>
     <div class="col-md-4">
         <div class="panel panel-default">
-            <div class="panel-heading"><h4 class="panel-title"><strong>Weekly TOP 10</strong></h4></div>
+            <div class="panel-heading"><h4 class="panel-title"><strong>本周前十名</strong></h4></div>
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>UserName</th>
-                        <th style="width:20%">Accepted</th>
+                        <th>用户名</th>
+                        <th style="width:20%">通过数</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -61,7 +61,7 @@
                 @if (TopTenUser.Count == 0)
                 {
                     <tr>
-                        <td class="text-center" colspan="2">No user</td>
+                        <td class="text-center" colspan="2">暂无用户</td>
                     </tr>
                 }
                 </tbody>

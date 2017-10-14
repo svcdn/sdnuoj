@@ -1,7 +1,7 @@
 ﻿@model SDNUOJ.Utilities.PagedList<SDNUOJ.Utilities.TreeNode<SDNUOJ.Entity.ForumPostEntity>>
 
 @{
-    ViewBag.__Title = "Discuss Board";
+    ViewBag.__Title = "讨论版";
 }
 
 @functions {
@@ -47,7 +47,7 @@
 <div class="dtable dtable-nofoot">
     <div class="dhead">
         <div class="row text-center">
-            <h2>Discuss Board | @Html.ActionLink("New", "New", "Forum", new { pid = ViewBag.ProblemID }, null)</h2>
+            <h2>讨论版 | @Html.ActionLink("发帖", "New", "Forum", new { pid = ViewBag.ProblemID }, null)</h2>
         </div>
     </div>
     <div class="dbody" style="padding-top:20px;">
@@ -81,7 +81,7 @@
     }
     else
     {
-        <div class="well text-center">No topic</div>
+        <div class="well text-center">暂无帖子</div>
     }
     </div>
     <div class="dfoot">

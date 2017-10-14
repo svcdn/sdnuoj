@@ -19,14 +19,14 @@
             @using (Html.BeginForm("Delete", "Mail", FormMethod.Post, new { @id = "form-mail-delete" }))
             {
                 @Html.AntiForgeryToken()
-                <button type="button" onclick="javascript:history.go(-1);" class="btn btn-default">&lsaquo;&nbsp;Back</button>
+                <button type="button" onclick="javascript:history.go(-1);" class="btn btn-default">&lsaquo;&nbsp;返回</button>
                 <input name="mailid" type="hidden" value="@Model.MailID" />
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger">删除</button>
             }
             <br />
             <pre>@Html.Raw(Model.Content)@*!TIP:Mail.Content添加时已Encode*@
 
-Send Date: @Model.SendDate.ToString("yyyy-MM-dd HH:mm:ss")</pre>
+发送时间 : @Model.SendDate.ToString("yyyy-MM-dd HH:mm:ss")</pre>
         </div>
         <div class="row row-noborder">
         @using (Html.BeginForm("Send", "Mail", FormMethod.Post, new { @class = "form-horizontal", @data_verify = "true" }))
@@ -35,32 +35,32 @@ Send Date: @Model.SendDate.ToString("yyyy-MM-dd HH:mm:ss")</pre>
             <div class="dtable dtable-striped">
                 <div class="dhead">
                     <div class="row text-center">
-                        <h3>Reply</h3>
+                        <h3>回复</h3>
                     </div>
                 </div>
                 <div class="dbody">
                     <div class="row">
-                        <label for="title" class="col-sm-2 control-label"><span class="star">*</span> Title</label>
+                        <label for="title" class="col-sm-2 control-label"><span class="star">*</span> 标题</label>
                         <div class="col-sm-8">
-                            <input id="title" name="title" type="text" maxlength="100" class="form-control" value="Re: @Html.Raw(Model.Title)"@*!TIP:Mail.Title添加时已Encode*@ required="required" placeholder="Mail title" data-emptyinfo="Mail title can not be NULL!" />
+                            <input id="title" name="title" type="text" maxlength="100" class="form-control" value="回复: @Html.Raw(Model.Title)"@*!TIP:Mail.Title添加时已Encode*@ required="required" placeholder="消息标题" data-emptyinfo="消息标题不能为空！" />
                         </div>
                     </div>
                     <div class="row">
-                        <label for="tousername" class="col-sm-2 control-label"><span class="star">*</span> To</label>
+                        <label for="tousername" class="col-sm-2 control-label"><span class="star">*</span> 发送到</label>
                         <div class="col-sm-8">
-                            <input id="tousername" name="tousername" type="text" maxlength="20" class="form-control" value="@Model.FromUserName" required="required" readonly="readonly" data-emptyinfo="To User name can not be NULL!" data-regex="^\w+$" data-invalidinfo="Username is INVALID!" />
+                            <input id="tousername" name="tousername" type="text" maxlength="20" class="form-control" value="@Model.FromUserName" required="required" readonly="readonly" data-emptyinfo="要发送到的用户名不能为空！" data-regex="^\w+$" data-invalidinfo="用户名无效！" />
                         </div>
                     </div>
                     <div class="row">
-                        <label for="content" class="col-sm-2 control-label"><span class="star">*</span> Content</label>
+                        <label for="content" class="col-sm-2 control-label"><span class="star">*</span> 正文</label>
                         <div class="col-sm-8">
-                            <textarea id="content" name="content" class="form-control" rows="10" required="required" placeholder="Your content" data-emptyinfo="Mail content can not be NULL!"></textarea>
+                            <textarea id="content" name="content" class="form-control" rows="10" required="required" placeholder="您的正文" data-emptyinfo="消息正文不能为空！"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="dfoot">
                     <div class="row text-center">
-                        <button type="submit" class="btn btn-primary" data-loading-text="Sending...">送出</button>
+                        <button type="submit" class="btn btn-primary" data-loading-text="正在发送...">发送</button>
                         <button type="reset" class="btn btn-default">重填</button>
                     </div>
                 </div>
